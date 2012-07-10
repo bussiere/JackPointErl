@@ -1,0 +1,12 @@
+{application, mimetypes,
+ [
+  {description, "mimetypes"},
+  {vsn, "0.0.1"},
+  {registered, [mimetypes]},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { mimetypes_app, []}},
+  {env, []}
+ ]}.
