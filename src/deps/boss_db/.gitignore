@@ -1,4 +1,0 @@
-ebin/*.beam
-ebin/boss_db.app
-deps
-erl_crash.dump

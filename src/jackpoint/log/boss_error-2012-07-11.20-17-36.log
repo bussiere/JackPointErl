@@ -1,0 +1,22 @@
+
+=INFO REPORT==== 11-Jul-2012::20:17:36 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 11-Jul-2012::20:17:36 ===
+Starting master services on jackpoint@Kusanagi
+
+=INFO REPORT==== 11-Jul-2012::20:17:36 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/jackpoint/priv/jackpoint.routes" ....
+
+=INFO REPORT==== 11-Jul-2012::20:17:36 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=ERROR REPORT==== 11-Jul-2012::20:17:36 ===
+Missing or invalid boss.routes file in "../cb_admin/priv/cb_admin.routes"
+{error,enoent}
+
+=ERROR REPORT==== 11-Jul-2012::20:17:49 ===
+GET / [jackpoint] 404 0ms
+
+=ERROR REPORT==== 11-Jul-2012::20:17:54 ===
+GET /admin [jackpoint] 404 0ms

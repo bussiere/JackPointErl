@@ -1,8 +1,0 @@
-*.swp
-*.beam
-erl_crash.dump
-coverage/*
-.DS_Store
-build
-*.xcodeproj
-.eunit/

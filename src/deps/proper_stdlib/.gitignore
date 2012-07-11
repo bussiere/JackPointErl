@@ -1,5 +1,0 @@
-ebin
-.eunit
-deps
-*.beam
-logs
