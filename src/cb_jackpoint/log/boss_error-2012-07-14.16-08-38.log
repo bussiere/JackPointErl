@@ -1,0 +1,36 @@
+
+=INFO REPORT==== 14-Jul-2012::16:08:38 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 14-Jul-2012::16:08:38 ===
+Starting master services on cb_jackpoint@Kusanagi
+
+=INFO REPORT==== 14-Jul-2012::16:08:39 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=INFO REPORT==== 14-Jul-2012::16:08:39 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 14-Jul-2012::16:08:48 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=ERROR REPORT==== 14-Jul-2012::16:08:48 ===
+GET / [cb_jackpoint] 404 2ms
+
+=INFO REPORT==== 14-Jul-2012::16:11:08 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=INFO REPORT==== 14-Jul-2012::16:11:08 ===
+GET /index/hello [cb_jackpoint] 200 90ms
+
+=INFO REPORT==== 14-Jul-2012::16:12:36 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=INFO REPORT==== 14-Jul-2012::16:12:36 ===
+GET / [cb_jackpoint] 200 52ms
+
+=INFO REPORT==== 14-Jul-2012::16:23:56 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=INFO REPORT==== 14-Jul-2012::16:23:56 ===
+GET / [cb_jackpoint] 200 119ms

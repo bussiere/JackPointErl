@@ -1,4 +1,4 @@
 ebin/*.beam
-ebin/boss.app
-deps
+ebin/*.app
+log/*.log
 erl_crash.dump

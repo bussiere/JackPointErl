@@ -1,0 +1,33 @@
+
+=INFO REPORT==== 12-Jul-2012::00:07:48 ===
+Starting Boss in development mode....
+
+=INFO REPORT==== 12-Jul-2012::00:07:48 ===
+Starting master services on cb_jackpoint@Kusanagi
+
+=INFO REPORT==== 12-Jul-2012::00:07:48 ===
+Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv/cb_jackpoint.routes" ....
+
+=INFO REPORT==== 12-Jul-2012::00:07:48 ===
+Loading routes from "../cb_admin/priv/cb_admin.routes" ....
+
+=INFO REPORT==== 12-Jul-2012::00:07:57 ===
+GET /admin [cb_admin] 200 16ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:15 ===
+GET /admin/routes/index [cb_admin] 200 3ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:30 ===
+GET /admin/model/model [cb_admin] 200 5ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:31 ===
+GET /admin/upgrade/upgrade [cb_admin] 200 3ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:34 ===
+GET /admin/lang/show [cb_admin] 200 3ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:35 ===
+GET /admin/model/model [cb_admin] 200 2ms
+
+=INFO REPORT==== 12-Jul-2012::01:11:37 ===
+GET /admin/ [cb_admin] 200 1ms

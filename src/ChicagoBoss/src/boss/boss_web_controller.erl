@@ -350,15 +350,22 @@ handle_request(Req, RequestMod, ResponseMod) ->
                     end,
                     Response = simple_bridge:make_response(ResponseMod, {Req, DocRoot}),
                     Response1 = (Response:status_code(StatusCode)):data(Payload),
-                    Response2 = case SessionID of
+                    Headers2 = case SessionID of
                         undefined ->
-                            Response1;
+                            Headers;
                         _ ->
                             SessionExpTime = boss_session:get_session_exp_time(),
-                            Response1:cookie(SessionKey, SessionID, "/", SessionExpTime)
+                            CookieOptions = [{path, "/"}, {max_age, SessionExpTime}],
+                            CookieOptions2 = case boss_env:get_env(session_domain, undefined) of
+                                undefined ->
+                                    CookieOptions;
+                                CookieDomain ->
+                                    lists:merge(CookieOptions, [{domain, CookieDomain}])
+                            end,
+                            lists:merge(Headers, [ mochiweb_cookies:cookie(SessionKey, SessionID, CookieOptions2) ])
                     end,
-                    Response3 = lists:foldl(fun({K, V}, Acc) -> Acc:header(K, V) end, Response2, Headers),
-                    Response3:build_response()
+                    Response2 = lists:foldl(fun({K, V}, Acc) -> Acc:header(K, V) end, Response1, Headers2),
+                    Response2:build_response()
             end
     end.
 
@@ -387,7 +394,8 @@ process_request(#boss_app_info{ router_pid = RouterPid } = AppInfo, Req, Mode, U
     if 
         Mode =:= development ->
             ControllerList = boss_files:web_controller_list(AppInfo#boss_app_info.application),
-            boss_router:set_controllers(RouterPid, ControllerList);
+            boss_router:set_controllers(RouterPid, ControllerList),
+            boss_router:reload(RouterPid);
         true ->
             ok
     end,
@@ -724,12 +732,13 @@ render_view({Controller, Template, _}, AppInfo, Req, SessionID, Variables, Heade
     ViewPath = boss_files:web_view_path(Controller, Template),
     LoadResult = boss_load:load_view_if_dev(AppInfo#boss_app_info.application, ViewPath, AppInfo#boss_app_info.translator_pid),
     BossFlash = boss_flash:get_and_clear(SessionID),
+    SessionData = boss_session:get_session_data(SessionID),
     case LoadResult of
         {ok, Module} ->
             {Lang, TranslationFun} = choose_translation_fun(AppInfo#boss_app_info.translator_pid, 
                 Module:translatable_strings(), Req:header(accept_language), 
                 proplists:get_value("Content-Language", Headers)),
-            case Module:render(lists:merge([{"_lang", Lang}, 
+            case Module:render(lists:merge([{"_lang", Lang}, {"_session", SessionData},
                             {"_base_url", AppInfo#boss_app_info.base_url}|Variables], BossFlash), 
                     [{translation_fun, TranslationFun}, {locale, Lang},
                         {custom_tags_context, [
