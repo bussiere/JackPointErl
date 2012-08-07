@@ -34,3 +34,67 @@ Loading routes from "/home/bussiere/workspace/JackpointErl/src/cb_jackpoint/priv
 
 =INFO REPORT==== 14-Jul-2012::16:23:56 ===
 GET / [cb_jackpoint] 200 119ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:26 ===
+GET /admin/ [cb_admin] 200 240ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:28 ===
+GET /admin/model/model [cb_admin] 200 12ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:30 ===
+GET /admin/model/model/greeting [cb_admin] 200 53ms
+
+=ERROR REPORT==== 14-Jul-2012::16:53:35 ===
+{undef,[{greeting,module_info,[exports]},
+        {boss_record_lib,dummy_record,1},
+        {cb_admin_model_controller,upload,4},
+        {boss_web_controller,execute_action,5},
+        {boss_web_controller,process_request,5},
+        {timer,tc,3},
+        {boss_web_controller,handle_request,3},
+        {mochiweb_http,headers,5}]}
+
+=ERROR REPORT==== 14-Jul-2012::16:53:35 ===
+GET /admin/model/upload/greeting [cb_admin] 500 718ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:50 ===
+GET /doc/greeting [cb_jackpoint] 200 2031ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:50 ===
+GET /doc/greeting [cb_jackpoint] 200 571ms
+
+=ERROR REPORT==== 14-Jul-2012::16:53:50 ===
+GET /doc/stylesheet.css [cb_jackpoint] 404 0ms
+
+=ERROR REPORT==== 14-Jul-2012::16:53:50 ===
+GET /doc/erlang.png [cb_jackpoint] 404 0ms
+
+=INFO REPORT==== 14-Jul-2012::16:53:59 ===
+GET /admin/lang/show [cb_admin] 200 13ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:00 ===
+GET /admin/upgrade/upgrade [cb_admin] 200 4ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:02 ===
+GET /admin/lang/show [cb_admin] 200 2ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:03 ===
+GET /admin/model/model [cb_admin] 200 1ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:04 ===
+GET /admin/routes/index [cb_admin] 200 17ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:06 ===
+GET /admin/ [cb_admin] 200 2ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:07 ===
+GET /admin/model/model [cb_admin] 200 1ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:09 ===
+GET /admin/model/model/greeting [cb_admin] 200 5ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:11 ===
+GET /admin/model/create/greeting [cb_admin] 200 14ms
+
+=INFO REPORT==== 14-Jul-2012::16:54:14 ===
+GET /admin/ [cb_admin] 200 1ms
